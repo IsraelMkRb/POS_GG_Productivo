@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="GemaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'Gema.dbo.empleados.login_dtl' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+        <EntityType Name="empleados_login_dtl">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="userlogin" />
+            <PropertyRef Name="passwordlogin" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="userlogin" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="passwordlogin" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="general_Articulo_Modificador_Dtl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="ID_Item" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="general_Articulos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Display" Type="varbinary" MaxLength="50" Nullable="false" />
+          <Property Name="Precio" Type="decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Impuesto" Type="int" Nullable="false" />
+          <Property Name="Categoria" Type="int" Nullable="false" />
+          <Property Name="Precio_Modificable" Type="bit" Nullable="false" />
+          <Property Name="Tiene_Modificadores" Type="bit" Nullable="false" />
+        </EntityType>
+        <Function Name="ActualizaEstadoToken" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nuevafecha" Type="datetime" Mode="In" />
+          <Parameter Name="token" Type="varchar" Mode="In" />
+        </Function>
+        <Function Name="RegistraToken" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="token" Type="varchar" Mode="In" />
+          <Parameter Name="fechafin" Type="datetime" Mode="In" />
+        </Function>
+        <EntityContainer Name="GemaModelStoreContainer">
+          <EntitySet Name="general_Articulo_Modificador_Dtl" EntityType="Self.general_Articulo_Modificador_Dtl" Schema="dbo" Table="general.Articulo_Modificador_Dtl" store:Type="Tables" />
+          <EntitySet Name="general_Articulos" EntityType="Self.general_Articulos" Schema="dbo" Table="general.Articulos" store:Type="Tables" />
+          <EntitySet Name="empleados_login_dtl" EntityType="Self.empleados_login_dtl" store:Type="Tables" store:Schema="dbo" store:Name="empleados.login_dtl">
+            <DefiningQuery>SELECT 
+    [empleados_login_dtl].[ID] AS [ID], 
+    [empleados_login_dtl].[userlogin] AS [userlogin], 
+    [empleados_login_dtl].[passwordlogin] AS [passwordlogin]
+    FROM [dbo].[empleados.login_dtl] AS [empleados_login_dtl]</DefiningQuery>
+          </EntitySet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GemaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="general_Articulo_Modificador_Dtl">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="ID_Item" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="general_Articulos">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Display" Type="Binary" MaxLength="50" FixedLength="false" Nullable="false" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="Impuesto" Type="Int32" Nullable="false" />
+          <Property Name="Categoria" Type="Int32" Nullable="false" />
+          <Property Name="Precio_Modificable" Type="Boolean" Nullable="false" />
+          <Property Name="Tiene_Modificadores" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="empleados_login_dtl">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="userlogin" />
+            <PropertyRef Name="passwordlogin" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="userlogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="passwordlogin" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="GemaEntities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="general_Articulo_Modificador_Dtl" EntityType="Self.general_Articulo_Modificador_Dtl" />
+          <EntitySet Name="general_Articulos" EntityType="Self.general_Articulos" />
+          <EntitySet Name="empleados_login_dtl" EntityType="Self.empleados_login_dtl" />
+          <FunctionImport Name="RegistraToken">
+            <Parameter Name="token" Mode="In" Type="String" />
+            <Parameter Name="fechafin" Mode="In" Type="DateTime" />
+          </FunctionImport>
+          <FunctionImport Name="ActualizaEstadoToken">
+            <Parameter Name="nuevafecha" Mode="In" Type="DateTime" />
+            <Parameter Name="token" Mode="In" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GemaModelStoreContainer" CdmEntityContainer="GemaEntities1">
+          <EntitySetMapping Name="general_Articulo_Modificador_Dtl">
+            <EntityTypeMapping TypeName="GemaModel.general_Articulo_Modificador_Dtl">
+              <MappingFragment StoreEntitySet="general_Articulo_Modificador_Dtl">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ID_Item" ColumnName="ID_Item" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="general_Articulos">
+            <EntityTypeMapping TypeName="GemaModel.general_Articulos">
+              <MappingFragment StoreEntitySet="general_Articulos">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Display" ColumnName="Display" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="Impuesto" ColumnName="Impuesto" />
+                <ScalarProperty Name="Categoria" ColumnName="Categoria" />
+                <ScalarProperty Name="Precio_Modificable" ColumnName="Precio_Modificable" />
+                <ScalarProperty Name="Tiene_Modificadores" ColumnName="Tiene_Modificadores" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="empleados_login_dtl">
+            <EntityTypeMapping TypeName="GemaModel.empleados_login_dtl">
+              <MappingFragment StoreEntitySet="empleados_login_dtl">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="userlogin" ColumnName="userlogin" />
+                <ScalarProperty Name="passwordlogin" ColumnName="passwordlogin" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="RegistraToken" FunctionName="GemaModel.Store.RegistraToken" />
+          <FunctionImportMapping FunctionImportName="ActualizaEstadoToken" FunctionName="GemaModel.Store.ActualizaEstadoToken" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

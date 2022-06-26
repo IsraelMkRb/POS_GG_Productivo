@@ -10,10 +10,6 @@ namespace Datos
     {
         public Datos()
         {
-            using (GemaEntities db = new GemaEntities())
-            {
-                
-            }
         }
     }
 }

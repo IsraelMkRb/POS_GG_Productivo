@@ -30,11 +30,11 @@
         {
             this.usuario_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.user_textbox = new System.Windows.Forms.TextBox();
+            this.password_textbox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.Cerrar_Button = new System.Windows.Forms.Button();
+            this.ingresar_button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,48 +58,39 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Contraseña";
             // 
-            // textBox1
+            // user_textbox
             // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(53, 38);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(347, 22);
-            this.textBox1.TabIndex = 2;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.user_textbox.Location = new System.Drawing.Point(53, 38);
+            this.user_textbox.Name = "user_textbox";
+            this.user_textbox.Size = new System.Drawing.Size(347, 22);
+            this.user_textbox.TabIndex = 2;
+            this.user_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.user_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.user_textbox_KeyPress);
             // 
-            // textBox2
+            // password_textbox
             // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(53, 107);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.PasswordChar = '*';
-            this.textBox2.Size = new System.Drawing.Size(347, 22);
-            this.textBox2.TabIndex = 3;
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.password_textbox.Location = new System.Drawing.Point(62, 107);
+            this.password_textbox.Name = "password_textbox";
+            this.password_textbox.PasswordChar = '*';
+            this.password_textbox.Size = new System.Drawing.Size(347, 22);
+            this.password_textbox.TabIndex = 3;
+            this.password_textbox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.password_textbox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.password_textbox_KeyPress);
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Cerrar_Button);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.ingresar_button);
+            this.panel1.Controls.Add(this.password_textbox);
             this.panel1.Controls.Add(this.usuario_label);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.user_textbox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(11, 9);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(434, 189);
             this.panel1.TabIndex = 4;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(309, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(91, 29);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Ingresar";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // Cerrar_Button
             // 
@@ -111,14 +102,25 @@
             this.Cerrar_Button.UseVisualStyleBackColor = true;
             this.Cerrar_Button.Click += new System.EventHandler(this.Cerrar_Button_Click);
             // 
+            // ingresar_button
+            // 
+            this.ingresar_button.Location = new System.Drawing.Point(309, 145);
+            this.ingresar_button.Name = "ingresar_button";
+            this.ingresar_button.Size = new System.Drawing.Size(91, 29);
+            this.ingresar_button.TabIndex = 4;
+            this.ingresar_button.Text = "Ingresar";
+            this.ingresar_button.UseVisualStyleBackColor = true;
+            this.ingresar_button.Click += new System.EventHandler(this.Ingresar_button_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(457, 211);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
@@ -132,10 +134,10 @@
 
         private System.Windows.Forms.Label usuario_label;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox user_textbox;
+        public System.Windows.Forms.TextBox password_textbox;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ingresar_button;
         private System.Windows.Forms.Button Cerrar_Button;
     }
 }

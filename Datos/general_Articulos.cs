@@ -12,7 +12,7 @@ namespace Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class Articulos
+    public partial class general_Articulos
     {
         public int ID { get; set; }
         public string Nombre { get; set; }

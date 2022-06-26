@@ -53,55 +53,58 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Articulos.cs">
-      <DependentUpon>Datos_Entity.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Articulo_Modificador_Dtl.cs">
-      <DependentUpon>Datos_Entity.tt</DependentUpon>
-    </Compile>
     <Compile Include="Datos.cs" />
-    <Compile Include="Datos_Entity.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Datos_Entity.Context.tt</DependentUpon>
+    <Compile Include="empleados_login_dtl.cs">
+      <DependentUpon>GemaEntities.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datos_Entity.cs">
+    <Compile Include="GemaEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Datos_Entity.tt</DependentUpon>
+      <DependentUpon>GemaEntities.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Datos_Entity.Designer.cs">
+    <Compile Include="GemaEntities.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Datos_Entity.edmx</DependentUpon>
+      <DependentUpon>GemaEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GemaEntities.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GemaEntities.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="general_Articulos.cs">
+      <DependentUpon>GemaEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="general_Articulo_Modificador_Dtl.cs">
+      <DependentUpon>GemaEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="Datos_Entity.edmx">
+    <EntityDeploy Include="GemaEntities.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Datos_Entity.Designer.cs</LastGenOutput>
+      <LastGenOutput>GemaEntities.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Datos_Entity.edmx.diagram">
-      <DependentUpon>Datos_Entity.edmx</DependentUpon>
+    <None Include="GemaEntities.edmx.diagram">
+      <DependentUpon>GemaEntities.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Datos_Entity.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Datos_Entity.edmx</DependentUpon>
-      <LastGenOutput>Datos_Entity.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Datos_Entity.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Datos_Entity.edmx</DependentUpon>
-      <LastGenOutput>Datos_Entity.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="GemaEntities.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GemaEntities.edmx</DependentUpon>
+      <LastGenOutput>GemaEntities.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GemaEntities.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GemaEntities.edmx</DependentUpon>
+      <LastGenOutput>GemaEntities.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

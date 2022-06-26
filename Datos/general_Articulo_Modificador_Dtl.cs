@@ -12,7 +12,7 @@ namespace Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class Articulo_Modificador_Dtl
+    public partial class general_Articulo_Modificador_Dtl
     {
         public int ID { get; set; }
         public int ID_Item { get; set; }
