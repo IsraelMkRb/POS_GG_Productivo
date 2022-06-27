@@ -22,12 +22,15 @@ namespace POS_GG.Formularios.BOH
             Application.Exit();
         }
 
+        //Obtenemos el listado de empleados con login desde la bd al cargar login, para no hacer larga la espera al presionar enter
+        List<Datos.empleados_login_dtl> infoLoginEmpleados = Negocio.Empleados_Login.Get();
+
         private void Ingresar_button_Click(object sender, EventArgs e)
         {
-            //Obtenemos el listado de empleados con login desde la bd
-           List<Datos.empleados_login_dtl> infologinempleados = Negocio.Empleados_Login.Get();
+            Mensajedecarga.Text = "Cargando";
+
             //Recorremos el listado de datos 
-            foreach (var empleado in infologinempleados)
+            foreach (var empleado in infoLoginEmpleados)
             {
                 if(empleado.passwordlogin == password_textbox.Text && empleado.userlogin == user_textbox.Text)
                 {   //Si existe una configuracion de login igual al ingresado
@@ -46,6 +49,7 @@ namespace POS_GG.Formularios.BOH
                     MessageBox.Show("Usuario o contraseña equivocado, favor de verificar","Usuario no encontrado");
                     user_textbox.Text = "";
                     password_textbox.Text = "";
+                    Mensajedecarga.Text = "";
                     user_textbox.Focus();
                 }
             }

@@ -35,6 +35,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.Cerrar_Button = new System.Windows.Forms.Button();
             this.ingresar_button = new System.Windows.Forms.Button();
+            this.Mensajedecarga = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,6 +82,7 @@
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.Mensajedecarga);
             this.panel1.Controls.Add(this.Cerrar_Button);
             this.panel1.Controls.Add(this.ingresar_button);
             this.panel1.Controls.Add(this.password_textbox);
@@ -112,6 +114,14 @@
             this.ingresar_button.UseVisualStyleBackColor = true;
             this.ingresar_button.Click += new System.EventHandler(this.Ingresar_button_Click);
             // 
+            // Mensajedecarga
+            // 
+            this.Mensajedecarga.AutoSize = true;
+            this.Mensajedecarga.Location = new System.Drawing.Point(59, 151);
+            this.Mensajedecarga.Name = "Mensajedecarga";
+            this.Mensajedecarga.Size = new System.Drawing.Size(0, 17);
+            this.Mensajedecarga.TabIndex = 6;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -139,5 +149,6 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button ingresar_button;
         private System.Windows.Forms.Button Cerrar_Button;
+        private System.Windows.Forms.Label Mensajedecarga;
     }
 }

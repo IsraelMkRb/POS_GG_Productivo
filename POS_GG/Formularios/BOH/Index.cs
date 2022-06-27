@@ -19,79 +19,86 @@ namespace POS_GG.Formularios.BOH
             this.token = token;
             Negocio.Empleados_Login.RefreshStatusToken(token);
         }
-
-        private void cerrar_button_Click(object sender, EventArgs e)
+        #region Metodos de comportamiento
+        //Variable para determinar si el usuario lo cerro por boton o por teclado forzado
+        public bool Cerradoporbotonera = false;
+        private void Index_Shown(object sender, EventArgs e)
         {
-            Application.Exit();
+            cambiartamaño_button_Click(sender, e);
         }
-
-        private void cerrar_button_MouseMove(object sender, MouseEventArgs e)
-        {
-            cerrar_button.BackColor = Color.Red;
+        private void Index_Load(object sender, EventArgs e)
+        {    
+            
         }
-
-        private void cerrar_button_MouseLeave(object sender, EventArgs e)
-        {
-            cerrar_button.BackColor = SystemColors.ActiveCaption;
-        }
-
-        private void cambiartamaño_button_Click(object sender, EventArgs e)
-        {
-            if(this.Size == Screen.PrimaryScreen.WorkingArea.Size)
-            {
-                //cuando el formulario cubra toda la pantalla ajustamos a tamaño original
-                this.Size = new Size(923, 546);
-                this.Location = new Point(50, 59);
-            }
-            else
-            {
-                this.Size = Screen.PrimaryScreen.WorkingArea.Size;
-                this.Location = new Point(0, 0);
-            }
-
-            //ajustamos tamaño de contenedores
-            Cabezera_contendedor.Width = this.Width;
-            contenedor_opciones.Width = this.Width;
-            Contendedor_central.Width = this.Width-2;
-            Contendedor_central.Height = this.Height - Cabezera_contendedor.Height - contenedor_opciones.Height-2;
-            //Ajustamos los controladores de cada contendedor
-            //Cabezera
-            cerrar_button.Location = new Point(this.Width-cerrar_button.Width,cerrar_button.Location.Y);
-            cambiartamaño_button.Location = new Point(this.Width - cerrar_button.Width - cambiartamaño_button.Width, cambiartamaño_button.Location.Y);
-            minimizar_button.Location = new Point(this.Width-cerrar_button.Width-cambiartamaño_button.Width-minimizar_button.Width,minimizar_button.Location.Y);
-
-        }
-
-        public int xClick = 0;
-        public int yClick = 0;
         /// <summary>
-        /// Funcion para mover el formulario cuando presionan la cebezera y mueven el mouse
+        /// Valida los formularios abiertos en el contenedor central y devuelve el valor de la busqueda
+        /// </summary>
+        /// <param name="name">Nombre del formulario</param>
+        /// <returns></returns>
+        private bool HayUnoAbierto(string name)
+        {   //Recorremos los formularios que hay dentro del contenedor central para validar si existe
+            foreach (Form form in Contendedor_central.Controls)
+            {
+                if(form.Name == name) { return true;}
+            }
+            //si no encontramos nada regresaremos que es falso
+            return false;
+        }
+        /// <summary>
+        /// Ajusta el formulario a la configuracion correcta para agregarlo al contenedor principal
+        /// </summary>
+        /// <param name="formularioaAbrir">la instancia del formulario</param>
+        private void AperturaForm(Form formularioaAbrir)
+        {
+            formularioaAbrir.TopLevel = false;
+            formularioaAbrir.FormBorderStyle = FormBorderStyle.None;
+            Contendedor_central.Controls.Add(formularioaAbrir);
+            formularioaAbrir.Show();
+            formularioaAbrir.WindowState = FormWindowState.Maximized;
+        }
+        /// <summary>
+        /// Validaremos si el usuario cerro con los botones configurados o con teclado, o cierre forzado.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Cabezera_contendedor_MouseMove(object sender, MouseEventArgs e)
+        private void Index_FormClosed(object sender, FormClosedEventArgs e)
         {
-            //Si al detectarse movimiento del raton pero no se tiene el boton izquierdo presionado, solo se registra el valor x y
-            if (e.Button != MouseButtons.Left)
-            { xClick = e.X; yClick = e.Y; }
-            else //Pero si se encuentra presionado el boton izquierdo se pasan los valores x y del raton al formulario para que se mueva con el
-            { this.Left = this.Left + (e.X - xClick); this.Top = this.Top + (e.Y - yClick); }
+            if (!Cerradoporbotonera)
+            {
+                Application.Exit();
+            }
+        }
+        #endregion
+
+        #region Metodos de la Botonera
+
+        private void InformeCuentasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
 
-        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ProductosToolStripMenuItem_Click(object sender, EventArgs e)
+        {       //Validamos si no existe un formulario
+            if (!HayUnoAbierto("Articulos"))
+            {   //Creamos instancia del formulario seleccionado y la pasamos a configurar para ingresarlo al contenedor principal
+                Catalogos.Articulos articulos = new Catalogos.Articulos();
+                AperturaForm(articulos);
+            }
+        }
+
+        private void CerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Login login = new Login();
             login.Show();
+            Cerradoporbotonera = true;
             this.Close();
         }
 
-        private void Index_Load(object sender, EventArgs e)
+        private void SalirToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            Cerradoporbotonera = true;
+            Application.Exit();
         }
-
-        private void informeCuentasToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
     }
 }
