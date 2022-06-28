@@ -16,5 +16,13 @@ namespace POS_GG.Formularios.BOH.Catalogos
         {
             InitializeComponent();
         }
+
+        private void Articulos_Resize(object sender, EventArgs e)
+        {
+            int x = (this.Size.Width - Contenedor_Central.Width) / 2;
+            int y = (this.Size.Height - Contenedor_Central.Height) / 2;
+
+            Contenedor_Central.Location = new Point(x, y);
+        }
     }
 }

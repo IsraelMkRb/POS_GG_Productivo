@@ -394,7 +394,17 @@ namespace POS_GG.Formularios.BOH
             cerrar_button.Location = new Point(this.Width - cerrar_button.Width, cerrar_button.Location.Y);
             cambiartamaño_button.Location = new Point(this.Width - cerrar_button.Width - cambiartamaño_button.Width, cambiartamaño_button.Location.Y);
             minimizar_button.Location = new Point(this.Width - cerrar_button.Width - cambiartamaño_button.Width - minimizar_button.Width, minimizar_button.Location.Y);
+            //Ajustamos el formulario que este mostrado en el contenedor central
+            AjustaFormulario();
+        }
 
+        private void AjustaFormulario()
+        {
+            foreach (Form item in Contendedor_central.Controls)
+            {
+                item.WindowState = FormWindowState.Minimized;
+                item.WindowState = FormWindowState.Maximized;
+            }
         }
 
         public int xClick = 0;
