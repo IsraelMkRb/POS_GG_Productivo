@@ -33,12 +33,6 @@ namespace POS_GG.Formularios.BOH
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Index));
-            this.cerrar_button = new System.Windows.Forms.Button();
-            this.cambiartamaño_button = new System.Windows.Forms.Button();
-            this.minimizar_button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.Cabezera_contendedor = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.Botonera = new System.Windows.Forms.MenuStrip();
             this.catalogosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -60,100 +54,17 @@ namespace POS_GG.Formularios.BOH
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contenedor_opciones = new System.Windows.Forms.Panel();
             this.Contendedor_central = new System.Windows.Forms.Panel();
-            this.Cabezera_contendedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.Cabezera_contendedor = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.minimizar_button = new System.Windows.Forms.Button();
+            this.cambiartamaño_button = new System.Windows.Forms.Button();
+            this.cerrar_button = new System.Windows.Forms.Button();
             this.Botonera.SuspendLayout();
             this.contenedor_opciones.SuspendLayout();
+            this.Cabezera_contendedor.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // cerrar_button
-            // 
-            this.cerrar_button.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.cerrar_button.FlatAppearance.BorderSize = 0;
-            this.cerrar_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cerrar_button.Font = new System.Drawing.Font("Webdings", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.cerrar_button.Location = new System.Drawing.Point(881, -1);
-            this.cerrar_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cerrar_button.Name = "cerrar_button";
-            this.cerrar_button.Size = new System.Drawing.Size(41, 42);
-            this.cerrar_button.TabIndex = 0;
-            this.cerrar_button.TabStop = false;
-            this.cerrar_button.Text = "r";
-            this.cerrar_button.UseVisualStyleBackColor = false;
-            this.cerrar_button.Click += new System.EventHandler(this.cerrar_button_Click);
-            this.cerrar_button.MouseLeave += new System.EventHandler(this.cerrar_button_MouseLeave);
-            this.cerrar_button.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cerrar_button_MouseMove);
-            // 
-            // cambiartamaño_button
-            // 
-            this.cambiartamaño_button.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.cambiartamaño_button.FlatAppearance.BorderSize = 0;
-            this.cambiartamaño_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cambiartamaño_button.Font = new System.Drawing.Font("Webdings", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.cambiartamaño_button.Location = new System.Drawing.Point(840, -1);
-            this.cambiartamaño_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cambiartamaño_button.Name = "cambiartamaño_button";
-            this.cambiartamaño_button.Size = new System.Drawing.Size(41, 42);
-            this.cambiartamaño_button.TabIndex = 1;
-            this.cambiartamaño_button.TabStop = false;
-            this.cambiartamaño_button.Text = "1";
-            this.cambiartamaño_button.UseVisualStyleBackColor = false;
-            this.cambiartamaño_button.Click += new System.EventHandler(this.cambiartamaño_button_Click);
-            // 
-            // minimizar_button
-            // 
-            this.minimizar_button.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.minimizar_button.FlatAppearance.BorderSize = 0;
-            this.minimizar_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimizar_button.Font = new System.Drawing.Font("Webdings", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
-            this.minimizar_button.Location = new System.Drawing.Point(799, -1);
-            this.minimizar_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.minimizar_button.Name = "minimizar_button";
-            this.minimizar_button.Size = new System.Drawing.Size(41, 42);
-            this.minimizar_button.TabIndex = 2;
-            this.minimizar_button.TabStop = false;
-            this.minimizar_button.Text = "0";
-            this.minimizar_button.UseVisualStyleBackColor = false;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(51, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 18);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "ERP Gema";
-            // 
-            // Cabezera_contendedor
-            // 
-            this.Cabezera_contendedor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Cabezera_contendedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.Cabezera_contendedor.Controls.Add(this.label1);
-            this.Cabezera_contendedor.Controls.Add(this.pictureBox1);
-            this.Cabezera_contendedor.Controls.Add(this.minimizar_button);
-            this.Cabezera_contendedor.Controls.Add(this.cambiartamaño_button);
-            this.Cabezera_contendedor.Controls.Add(this.cerrar_button);
-            this.Cabezera_contendedor.Location = new System.Drawing.Point(0, 0);
-            this.Cabezera_contendedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Cabezera_contendedor.Name = "Cabezera_contendedor";
-            this.Cabezera_contendedor.Size = new System.Drawing.Size(930, 43);
-            this.Cabezera_contendedor.TabIndex = 0;
-            this.Cabezera_contendedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Cabezera_contendedor_MouseMove);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.pictureBox1.BackgroundImage = global::POS_GG.Properties.Resources.main_icon;
-            this.pictureBox1.Image = global::POS_GG.Properties.Resources.main_icon;
-            this.pictureBox1.InitialImage = global::POS_GG.Properties.Resources.main_icon;
-            this.pictureBox1.Location = new System.Drawing.Point(5, 2);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(37, 33);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 3;
-            this.pictureBox1.TabStop = false;
             // 
             // Botonera
             // 
@@ -181,34 +92,33 @@ namespace POS_GG.Formularios.BOH
             this.insumosToolStripMenuItem,
             this.modificadoresToolStripMenuItem,
             this.recetasToolStripMenuItem});
-            this.catalogosToolStripMenuItem.Image = global::POS_GG.Properties.Resources.fondo_contenedor;
             this.catalogosToolStripMenuItem.Name = "catalogosToolStripMenuItem";
-            this.catalogosToolStripMenuItem.Size = new System.Drawing.Size(108, 48);
+            this.catalogosToolStripMenuItem.Size = new System.Drawing.Size(88, 48);
             this.catalogosToolStripMenuItem.Text = "Catalogos";
             // 
             // productosToolStripMenuItem
             // 
             this.productosToolStripMenuItem.Name = "productosToolStripMenuItem";
-            this.productosToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.productosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.productosToolStripMenuItem.Text = "Productos";
             this.productosToolStripMenuItem.Click += new System.EventHandler(this.ProductosToolStripMenuItem_Click);
             // 
             // insumosToolStripMenuItem
             // 
             this.insumosToolStripMenuItem.Name = "insumosToolStripMenuItem";
-            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.insumosToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.insumosToolStripMenuItem.Text = "Insumos";
             // 
             // modificadoresToolStripMenuItem
             // 
             this.modificadoresToolStripMenuItem.Name = "modificadoresToolStripMenuItem";
-            this.modificadoresToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.modificadoresToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.modificadoresToolStripMenuItem.Text = "Modificadores";
             // 
             // recetasToolStripMenuItem
             // 
             this.recetasToolStripMenuItem.Name = "recetasToolStripMenuItem";
-            this.recetasToolStripMenuItem.Size = new System.Drawing.Size(216, 26);
+            this.recetasToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.recetasToolStripMenuItem.Text = "Recetas";
             // 
             // vistasToolStripMenuItem
@@ -325,6 +235,101 @@ namespace POS_GG.Formularios.BOH
             this.Contendedor_central.Size = new System.Drawing.Size(921, 442);
             this.Contendedor_central.TabIndex = 2;
             // 
+            // Cabezera_contendedor
+            // 
+            this.Cabezera_contendedor.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.Cabezera_contendedor.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Cabezera_contendedor.BackgroundImage")));
+            this.Cabezera_contendedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.Cabezera_contendedor.Controls.Add(this.label1);
+            this.Cabezera_contendedor.Controls.Add(this.pictureBox1);
+            this.Cabezera_contendedor.Controls.Add(this.minimizar_button);
+            this.Cabezera_contendedor.Controls.Add(this.cambiartamaño_button);
+            this.Cabezera_contendedor.Controls.Add(this.cerrar_button);
+            this.Cabezera_contendedor.Location = new System.Drawing.Point(0, 0);
+            this.Cabezera_contendedor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Cabezera_contendedor.Name = "Cabezera_contendedor";
+            this.Cabezera_contendedor.Size = new System.Drawing.Size(930, 43);
+            this.Cabezera_contendedor.TabIndex = 0;
+            this.Cabezera_contendedor.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Cabezera_contendedor_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Tai Le", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.Location = new System.Drawing.Point(51, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(76, 18);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "ERP Gema";
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.pictureBox1.BackgroundImage = global::POS_GG.Properties.Resources.main_icon;
+            this.pictureBox1.Image = global::POS_GG.Properties.Resources.main_icon;
+            this.pictureBox1.InitialImage = global::POS_GG.Properties.Resources.main_icon;
+            this.pictureBox1.Location = new System.Drawing.Point(5, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(37, 33);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 3;
+            this.pictureBox1.TabStop = false;
+            // 
+            // minimizar_button
+            // 
+            this.minimizar_button.BackColor = System.Drawing.Color.Transparent;
+            this.minimizar_button.FlatAppearance.BorderSize = 0;
+            this.minimizar_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimizar_button.Font = new System.Drawing.Font("Webdings", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.minimizar_button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.minimizar_button.Location = new System.Drawing.Point(799, -1);
+            this.minimizar_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.minimizar_button.Name = "minimizar_button";
+            this.minimizar_button.Size = new System.Drawing.Size(41, 42);
+            this.minimizar_button.TabIndex = 2;
+            this.minimizar_button.TabStop = false;
+            this.minimizar_button.Text = "0";
+            this.minimizar_button.UseVisualStyleBackColor = false;
+            // 
+            // cambiartamaño_button
+            // 
+            this.cambiartamaño_button.BackColor = System.Drawing.Color.Transparent;
+            this.cambiartamaño_button.FlatAppearance.BorderSize = 0;
+            this.cambiartamaño_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cambiartamaño_button.Font = new System.Drawing.Font("Webdings", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.cambiartamaño_button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cambiartamaño_button.Location = new System.Drawing.Point(840, -1);
+            this.cambiartamaño_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cambiartamaño_button.Name = "cambiartamaño_button";
+            this.cambiartamaño_button.Size = new System.Drawing.Size(41, 42);
+            this.cambiartamaño_button.TabIndex = 1;
+            this.cambiartamaño_button.TabStop = false;
+            this.cambiartamaño_button.Text = "1";
+            this.cambiartamaño_button.UseVisualStyleBackColor = false;
+            this.cambiartamaño_button.Click += new System.EventHandler(this.cambiartamaño_button_Click);
+            // 
+            // cerrar_button
+            // 
+            this.cerrar_button.BackColor = System.Drawing.Color.Transparent;
+            this.cerrar_button.FlatAppearance.BorderSize = 0;
+            this.cerrar_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cerrar_button.Font = new System.Drawing.Font("Webdings", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(2)));
+            this.cerrar_button.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.cerrar_button.Location = new System.Drawing.Point(881, -1);
+            this.cerrar_button.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cerrar_button.Name = "cerrar_button";
+            this.cerrar_button.Size = new System.Drawing.Size(41, 42);
+            this.cerrar_button.TabIndex = 0;
+            this.cerrar_button.TabStop = false;
+            this.cerrar_button.Text = "r";
+            this.cerrar_button.UseVisualStyleBackColor = false;
+            this.cerrar_button.Click += new System.EventHandler(this.cerrar_button_Click);
+            this.cerrar_button.MouseLeave += new System.EventHandler(this.cerrar_button_MouseLeave);
+            this.cerrar_button.MouseMove += new System.Windows.Forms.MouseEventHandler(this.cerrar_button_MouseMove);
+            // 
             // Index
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -342,13 +347,13 @@ namespace POS_GG.Formularios.BOH
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Index_FormClosed);
             this.Load += new System.EventHandler(this.Index_Load);
             this.Shown += new System.EventHandler(this.Index_Shown);
-            this.Cabezera_contendedor.ResumeLayout(false);
-            this.Cabezera_contendedor.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.Botonera.ResumeLayout(false);
             this.Botonera.PerformLayout();
             this.contenedor_opciones.ResumeLayout(false);
             this.contenedor_opciones.PerformLayout();
+            this.Cabezera_contendedor.ResumeLayout(false);
+            this.Cabezera_contendedor.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -367,7 +372,7 @@ namespace POS_GG.Formularios.BOH
 
         private void cerrar_button_MouseLeave(object sender, EventArgs e)
         {
-            cerrar_button.BackColor = SystemColors.ActiveCaption;
+            cerrar_button.BackColor = Color.Transparent;
         }
 
         private void cambiartamaño_button_Click(object sender, EventArgs e)
@@ -377,11 +382,13 @@ namespace POS_GG.Formularios.BOH
                 //cuando el formulario cubra toda la pantalla ajustamos a tamaño original
                 this.Size = new Size(923, 546);
                 this.Location = new Point(50, 59);
+                cambiartamaño_button.Text = "1";
             }
             else
             {
                 this.Size = Screen.PrimaryScreen.WorkingArea.Size;
                 this.Location = new Point(0, 0);
+                cambiartamaño_button.Text = "2";
             }
 
             //ajustamos tamaño de contenedores

@@ -72,5 +72,16 @@ namespace POS_GG.Formularios.BOH
                 Ingresar_button_Click(sender, new EventArgs());
             }
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            System.Drawing.Drawing2D.LinearGradientBrush linGrBrush = new System.Drawing.Drawing2D.LinearGradientBrush(panel1.ClientRectangle,Color.White,Color.Gray,45); // Opaque blue
+            e.Graphics.FillRectangle(linGrBrush,panel1.ClientRectangle);
+            //Pen pen = new Pen(linGrBrush);
+
+            //e.Graphics.DrawLine(pen, 0, 10, 200, 10);
+            //e.Graphics.FillEllipse(linGrBrush, 0, 30, 200, 100);
+            //e.Graphics.FillRectangle(linGrBrush, 0, 155, 500, 30);
+        }
     }
 }

@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             this.usuario_label = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.user_textbox = new System.Windows.Forms.TextBox();
             this.password_textbox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.Mensajedecarga = new System.Windows.Forms.Label();
             this.Cerrar_Button = new System.Windows.Forms.Button();
             this.ingresar_button = new System.Windows.Forms.Button();
-            this.Mensajedecarga = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // usuario_label
             // 
             this.usuario_label.AutoSize = true;
+            this.usuario_label.BackColor = System.Drawing.Color.Transparent;
             this.usuario_label.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usuario_label.Location = new System.Drawing.Point(173, 10);
             this.usuario_label.Name = "usuario_label";
@@ -52,6 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(156, 79);
             this.label1.Name = "label1";
@@ -80,7 +83,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panel1.Controls.Add(this.Mensajedecarga);
             this.panel1.Controls.Add(this.Cerrar_Button);
@@ -89,13 +92,23 @@
             this.panel1.Controls.Add(this.usuario_label);
             this.panel1.Controls.Add(this.user_textbox);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(11, 9);
+            this.panel1.Location = new System.Drawing.Point(6, 5);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(434, 189);
+            this.panel1.Size = new System.Drawing.Size(439, 199);
             this.panel1.TabIndex = 4;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // Mensajedecarga
+            // 
+            this.Mensajedecarga.AutoSize = true;
+            this.Mensajedecarga.Location = new System.Drawing.Point(59, 151);
+            this.Mensajedecarga.Name = "Mensajedecarga";
+            this.Mensajedecarga.Size = new System.Drawing.Size(0, 17);
+            this.Mensajedecarga.TabIndex = 6;
             // 
             // Cerrar_Button
             // 
+            this.Cerrar_Button.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Cerrar_Button.BackgroundImage")));
             this.Cerrar_Button.Location = new System.Drawing.Point(212, 145);
             this.Cerrar_Button.Name = "Cerrar_Button";
             this.Cerrar_Button.Size = new System.Drawing.Size(91, 29);
@@ -114,20 +127,12 @@
             this.ingresar_button.UseVisualStyleBackColor = true;
             this.ingresar_button.Click += new System.EventHandler(this.Ingresar_button_Click);
             // 
-            // Mensajedecarga
-            // 
-            this.Mensajedecarga.AutoSize = true;
-            this.Mensajedecarga.Location = new System.Drawing.Point(59, 151);
-            this.Mensajedecarga.Name = "Mensajedecarga";
-            this.Mensajedecarga.Size = new System.Drawing.Size(0, 17);
-            this.Mensajedecarga.TabIndex = 6;
-            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(457, 211);
+            this.BackColor = System.Drawing.Color.Gray;
+            this.ClientSize = new System.Drawing.Size(452, 211);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
