@@ -57,6 +57,9 @@
     <Compile Include="empleados_login_dtl.cs">
       <DependentUpon>GemaEntities.tt</DependentUpon>
     </Compile>
+    <Compile Include="empleados_tokens.cs">
+      <DependentUpon>GemaEntities.tt</DependentUpon>
+    </Compile>
     <Compile Include="GemaEntities.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,6 +79,9 @@
       <DependentUpon>GemaEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="general_Articulo_Modificador_Dtl.cs">
+      <DependentUpon>GemaEntities.tt</DependentUpon>
+    </Compile>
+    <Compile Include="general_Modificadores.cs">
       <DependentUpon>GemaEntities.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

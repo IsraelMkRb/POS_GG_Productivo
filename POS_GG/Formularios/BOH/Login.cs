@@ -28,7 +28,7 @@ namespace POS_GG.Formularios.BOH
         private void Ingresar_button_Click(object sender, EventArgs e)
         {
             Mensajedecarga.Text = "Cargando";
-
+            Cursor = Cursors.WaitCursor;
             //Recorremos el listado de datos 
             foreach (var empleado in infoLoginEmpleados)
             {
@@ -41,7 +41,7 @@ namespace POS_GG.Formularios.BOH
                     Index ingresoindex = new Index(token);
                     //mostramos index y escondemos login.
                     ingresoindex.Show();
-                    this.Hide();                    
+                    this.Hide();      
                 }
                 else
                 {
@@ -75,13 +75,9 @@ namespace POS_GG.Formularios.BOH
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            System.Drawing.Drawing2D.LinearGradientBrush linGrBrush = new System.Drawing.Drawing2D.LinearGradientBrush(panel1.ClientRectangle,Color.White,Color.Gray,45); // Opaque blue
+            System.Drawing.Drawing2D.LinearGradientBrush linGrBrush = new System.Drawing.Drawing2D.LinearGradientBrush(panel1.ClientRectangle,Color.White,Color.Gray,90); // Opaque blue
             e.Graphics.FillRectangle(linGrBrush,panel1.ClientRectangle);
-            //Pen pen = new Pen(linGrBrush);
 
-            //e.Graphics.DrawLine(pen, 0, 10, 200, 10);
-            //e.Graphics.FillEllipse(linGrBrush, 0, 30, 200, 100);
-            //e.Graphics.FillRectangle(linGrBrush, 0, 155, 500, 30);
         }
     }
 }

@@ -12,15 +12,10 @@ namespace Datos
     using System;
     using System.Collections.Generic;
     
-    public partial class general_Articulos
+    public partial class empleados_tokens
     {
-        public int ID { get; set; }
-        public string Nombre { get; set; }
-        public string Display { get; set; }
-        public decimal Precio { get; set; }
-        public int Impuestos { get; set; }
-        public int Categoria { get; set; }
-        public bool Precio_Modificable { get; set; }
-        public bool Tiene_Modificadores { get; set; }
+        public string token { get; set; }
+        public System.DateTime time_live { get; set; }
+        public bool active { get; set; }
     }
 }

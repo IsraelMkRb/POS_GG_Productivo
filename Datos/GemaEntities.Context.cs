@@ -28,8 +28,10 @@ namespace Datos
         }
     
         public virtual DbSet<general_Articulo_Modificador_Dtl> general_Articulo_Modificador_Dtl { get; set; }
-        public virtual DbSet<general_Articulos> general_Articulos { get; set; }
         public virtual DbSet<empleados_login_dtl> empleados_login_dtl { get; set; }
+        public virtual DbSet<general_Articulos> general_Articulos { get; set; }
+        public virtual DbSet<empleados_tokens> empleados_tokens { get; set; }
+        public virtual DbSet<general_Modificadores> general_Modificadores { get; set; }
     
         public virtual int RegistraToken(string token, Nullable<System.DateTime> fechafin)
         {

@@ -78,12 +78,15 @@ namespace POS_GG.Formularios.BOH
         }
 
         private void ProductosToolStripMenuItem_Click(object sender, EventArgs e)
-        {       //Validamos si no existe un formulario
+        {
+            Cursor = Cursors.WaitCursor;
+            //Validamos si no existe un formulario
             if (!HayUnoAbierto("Articulos"))
             {   //Creamos instancia del formulario seleccionado y la pasamos a configurar para ingresarlo al contenedor principal
                 Catalogos.Articulos articulos = new Catalogos.Articulos();
                 AperturaForm(articulos);
             }
+            Cursor = Cursors.Default;
         }
 
         private void CerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
